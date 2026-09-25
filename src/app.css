@@ -1,0 +1,67 @@
+:root {
+  --bg: #061014;
+  --surface: #0b1a1f;
+  --surface-2: #0f2329;
+  --hair: #123a40;
+  --hair-strong: #1d5a60;
+  --text: #d8f4f2;
+  --muted: #5e8a8f;
+  --dim: #34585c;
+  --teal: #19d3c5;
+  --cyan: #5cf2ff;
+  --alarm: #ff5a5f;
+  --accent: var(--teal);
+
+  --font-ui: "Bahnschrift", "DIN Alternate", "Segoe UI", system-ui, sans-serif;
+  --font-num: "Cascadia Mono", "Cascadia Code", "Consolas", ui-monospace, monospace;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.35 var(--font-ui);
+  font-stretch: semi-condensed;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+:focus-visible {
+  outline: 1px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+.label {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.num {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,32 @@
+[package]
+name = "warseekrr"
+version = "0.1.0"
+description = "WARDOGS mortar calculator with in-game map coordinate capture"
+authors = ["Cataclaw"]
+license-file = "../LICENSE"
+repository = "https://github.com/Cataclaw/WarSeekrr"
+edition = "2021"
+
+[lib]
+name = "warseekrr_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri-plugin-global-shortcut = "2"
+anyhow = "1.0.104"
+xcap = "0.9.8"
+windows = { version = "0.62.2", features = ["Win32_Foundation", "Win32_UI_WindowsAndMessaging", "Media_Ocr", "Globalization", "Graphics_Imaging", "Storage_Streams", "Foundation", "Win32_System_WinRT"] }
+base64 = "0.23.1"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true
